@@ -1,0 +1,180 @@
+/* styles/Home.module.css */
+
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px; /* Daha fazla padding ekleyerek içeriği genişlet */
+    background-color: #f9f9f9; /* Arka plan rengini daha açık yap */
+    border-radius: 12px; /* Daha yuvarlak köşeler */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Daha belirgin gölgelendirme efekti */
+}
+
+/* Butonlar için daha modern bir görünüm */
+.startButton,
+.submitButton,
+.restartButton {
+    padding: 15px 30px; /* Buton boyutlarını artır */
+    margin: 15px;
+    background-color: #28a745; /* Yeşil bir renk */
+    color: white;
+    border: none;
+    border-radius: 20px; /* Daha yuvarlak köşeler */
+    cursor: pointer;
+    font-size: 1.2em; /* Font boyutunu artır */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Geçiş efekti ekle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Buton gölgesi */
+}
+
+.startButton:hover,
+.submitButton:hover,
+.restartButton:hover {
+    background-color: #218838; /* Hover rengi değiştir */
+    transform: scale(1.05); /* Hover efektine ölçekleme ekle */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Hover durumunda gölge artışı */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Formdan sonra boşluk bırak */
+}
+
+.label {
+    margin-bottom: 8px;
+    font-size: 1.4em; /* Yazı boyutunu artır */
+}
+
+.input {
+    padding: 12px; /* Padding artır */
+    font-size: 1em;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Daha yuvarlak köşeler */
+    width: 320px; /* Genişlik artır */
+    transition: border-color 0.3s; /* Geçiş efekti ekle */
+}
+
+.input:focus {
+    border-color: #80bdff; /* Focus durumunda kenar rengini değiştir */
+    outline: none; /* Varsayılan outline'ı kaldır */
+}
+
+/* Datalist için daha modern bir görünüm */
+.datalist {
+    max-height: 200px; /* Maksimum yükseklik */
+    overflow-y: auto; /* Taşma durumunda kaydırma çubuğu */
+    background-color: white; /* Arka plan rengi */
+    border: 1px solid #ccc; /* Kenar rengi */
+    border-radius: 8px; /* Kenar yuvarlama */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Gölge efekti */
+    padding: 10px; /* İçerik için boşluk */
+    margin: 20px auto; /* Üstte ve altta boşluk, sağ ve solda otomatik boşluk */
+    width: 90%; /* Genişlik %90 */
+    max-width: 500px; /* Maksimum genişlik */
+    transition: box-shadow 0.3s ease; /* Gölge geçişi */
+}
+
+.successMessage {
+    color: #28a745; /* Başarı mesajı yeşil */
+    font-weight: bold;
+    font-size: 1.2em; /* Başarı mesajı boyutunu artır */
+    margin-top: 10px; /* Üstteki boşluk */
+}
+
+.errorMessage {
+    color: #dc3545; /* Hata mesajı rengi kırmızı */
+    font-weight: bold;
+    font-size: 1.2em; /* Hata mesajı boyutunu artır */
+    margin-top: 10px; /* Üstteki boşluk */
+}
+
+.comparisonsContainer {
+    display: flex;
+    flex-wrap: wrap; /* Kutuların sarmalanmasını sağlar */
+    justify-content: center; /* Kutuların ortalanmasını sağlar */
+    margin-top: 20px; /* Yukarıdan boşluk ekle */
+}
+
+/* Kutular için daha modern bir görünüm */
+.comparisonBox {
+    border: 1px solid #ccc;
+    border-radius: 12px; /* Daha yuvarlak köşeler */
+    padding: 20px; /* İç boşluk artır */
+    flex: 0 0 calc(12.5% - 20px); /* 8 kutu yan yana (12.5% = 100% / 8) */
+    box-sizing: border-box; /* Padding ve border'ı dahil eder */
+    text-align: center;
+    margin: 10px; /* Kutular arasına boşluk ekle */
+    transition: transform 0.2s, box-shadow 0.2s; /* Geçiş efekti ekle */
+    background-color: #ffffff; /* Arka plan rengi */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+}
+
+.comparisonBox:hover {
+    transform: scale(1.05); /* Hover efekti ekle */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Hover sırasında gölgelendirme efekti ekle */
+}
+
+.correct {
+    background-color: #d4edda; /* Doğru kutular için yeşil arka plan */
+    border-color: #c3e6cb;
+}
+
+.incorrect {
+    background-color: #f8d7da; /* Yanlış kutular için kırmızı arka plan */
+    border-color: #f5c6cb;
+}
+
+.neutral {
+    background-color: #e2e3e5; /* Nötr kutular için gri arka plan */
+    border-color: #d6d8db;
+}
+
+/* Medya sorguları ile daha iyi uyum sağla */
+@media (max-width: 1200px) {
+    .comparisonBox {
+        flex: 0 0 calc(12.5% - 20px); /* 8 kutu yan yana */
+    }
+}
+
+@media (max-width: 992px) {
+    .comparisonBox {
+        flex: 0 0 calc(12.5% - 20px); /* 8 kutu yan yana */
+    }
+}
+
+@media (max-width: 768px) {
+    .comparisonBox {
+        flex: 0 0 calc(12.5% - 20px); /* 8 kutu yan yana */
+    }
+}
+
+@media (max-width: 576px) {
+    .comparisonBox {
+        flex: 0 0 calc(12.5% - 20px); /* 8 kutu yan yana */
+    }
+}
+winAnimation {
+    animation: fadeIn 1s ease-in-out;
+    font-size: 2rem;
+    color: green;
+    text-align: center;
+  }
+  
+  .nextTurnAnimation {
+    animation: fadeIn 1s ease-in-out;
+    font-size: 1.5rem;
+    color: blue;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
